@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Airline System - Login</title>
+
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+		crossorigin="anonymous"
+	/>
+
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8U5M7M2R5T9jpJ1rssZCvGSqtEtFPdA=="
+		crossorigin="anonymous"
+		referrerpolicy="no-referrer"
+	/>
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet"
+	/>
+
+	<link rel="stylesheet" href="../../assests/css/style.css" />
+</head>
+<body class="login-page">
+	<main class="login-wrapper d-flex align-items-center">
+		<div class="container">
+			<div class="login-card row g-0 align-items-stretch">
+				<section class="col-lg-6 login-hero">
+					<div class="hero-content">
+						<div class="hero-icon">
+							<img src="../../assests/images/airplane.png" alt="Airline logo" />
+						</div>
+						<h1 class="hero-title">Airline System</h1>
+						<p class="hero-note">
+							Secure login portal for airline operations and passenger services.
+						</p>
+					</div>
+				</section>
+
+				<section class="col-lg-6 login-form-section">
+					<div class="form-shell">
+						<div class="login-tabs" role="tablist">
+							<button
+								class="tab-button is-active"
+								type="button"
+								data-target="user"
+								role="tab"
+								aria-selected="true"
+							>
+								User Login
+							</button>
+							<button
+								class="tab-button"
+								type="button"
+								data-target="admin"
+								role="tab"
+								aria-selected="false"
+							>
+								Admin Login
+							</button>
+						</div>
+
+						<div class="tab-panels mt-4">
+							<div class="form-panel is-active" data-panel="user">
+								<form id="userLoginForm" class="user-auth-form is-active" autocomplete="off">
+									<div class="mb-3">
+										<label for="userName" class="form-label">Username or Gmail</label>
+										<input
+											type="text"
+											class="form-control form-control-lg"
+											id="userName"
+											placeholder="Enter your username"
+											required
+										/>
+									</div>
+
+									<div class="mb-3">
+										<label for="userPassword" class="form-label">Password</label>
+										<input
+											type="password"
+											class="form-control form-control-lg"
+											id="userPassword"
+											placeholder="Enter your password"
+											required
+										/>
+									</div>
+
+									<div class="mb-3">
+										<a class="register-link" href="#" data-auth="show-register">New User? Register</a>
+									</div>
+
+									<button type="submit" class="btn btn-login w-100">
+										Login
+										<i class="fa-solid fa-plane-up ms-2" aria-hidden="true"></i>
+									</button>
+								</form>
+
+								<form id="userRegisterForm" class="user-auth-form" autocomplete="off">
+									<div class="mb-3">
+										<label for="registerUsername" class="form-label">Username</label>
+										<input
+											type="text"
+											class="form-control form-control-lg"
+											id="registerUsername"
+											placeholder="Choose a username"
+											required
+										/>
+									</div>
+									<div class="mb-3">
+										<label for="registerGmail" class="form-label">Gmail</label>
+										<input
+											type="email"
+											class="form-control form-control-lg"
+											id="registerGmail"
+											placeholder="Enter your Gmail"
+											required
+										/>
+									</div>
+
+									<div class="mb-3">
+										<label for="registerPassword" class="form-label">Password</label>
+										<input
+											type="password"
+											class="form-control form-control-lg"
+											id="registerPassword"
+											placeholder="Create a password"
+											required
+										/>
+									</div>
+
+									<div class="mb-3">
+										<label for="registerConfirm" class="form-label">Confirm Password</label>
+										<input
+											type="password"
+											class="form-control form-control-lg"
+											id="registerConfirm"
+											placeholder="Confirm your password"
+											required
+										/>
+									</div>
+
+									<button type="submit" class="btn btn-outline-primary w-100">Register</button>
+
+									<div class="mt-3">
+										<a class="register-link" href="#" data-auth="show-login">
+											Already have account? Login
+										</a>
+									</div>
+								</form>
+							</div>
+
+							<form
+								id="adminLoginForm"
+								class="form-panel"
+								autocomplete="off"
+								data-panel="admin"
+							>
+								<div class="mb-3">
+									<label for="adminId" class="form-label">Admin ID</label>
+									<input
+										type="text"
+										class="form-control form-control-lg"
+										id="adminId"
+										placeholder="Enter admin ID"
+										required
+									/>
+								</div>
+
+								<div class="mb-4">
+									<label for="adminPassword" class="form-label">Password</label>
+									<input
+										type="password"
+										class="form-control form-control-lg"
+										id="adminPassword"
+										placeholder="Enter your password"
+										required
+									/>
+								</div>
+
+								<button type="submit" class="btn btn-login w-100">
+									Login
+									<i class="fa-solid fa-plane-up ms-2" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
+
+						<p class="form-footer mt-4">Secure access for airline operations and travelers.</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<script>
+		var tabButtons = document.querySelectorAll(".tab-button");
+		var panels = document.querySelectorAll(".form-panel");
+		var userLoginForm = document.getElementById("userLoginForm");
+		var userRegisterForm = document.getElementById("userRegisterForm");
+		var adminForm = document.getElementById("adminLoginForm");
+
+		tabButtons.forEach(function (button) {
+			button.addEventListener("click", function () {
+				var target = button.getAttribute("data-target");
+
+				tabButtons.forEach(function (item) {
+					item.classList.remove("is-active");
+					item.setAttribute("aria-selected", "false");
+				});
+
+				panels.forEach(function (panel) {
+					panel.classList.remove("is-active");
+					if (panel.getAttribute("data-panel") === target) {
+						panel.classList.add("is-active");
+					}
+				});
+
+				button.classList.add("is-active");
+				button.setAttribute("aria-selected", "true");
+			});
+		});
+
+		document.querySelectorAll("[data-auth]").forEach(function (link) {
+			link.addEventListener("click", function (event) {
+				event.preventDefault();
+				var action = link.getAttribute("data-auth");
+				if (action === "show-register") {
+					userLoginForm.classList.remove("is-active");
+					userRegisterForm.classList.add("is-active");
+				} else {
+					userRegisterForm.classList.remove("is-active");
+					userLoginForm.classList.add("is-active");
+				}
+			});
+		});
+
+		userLoginForm.addEventListener("submit", function (event) {
+			event.preventDefault();
+			window.location.href = "user-dashboard.html";
+		});
+
+		userRegisterForm.addEventListener("submit", function (event) {
+			event.preventDefault();
+		});
+
+		adminForm.addEventListener("submit", function (event) {
+			event.preventDefault();
+			window.location.href = "admin-dashboard.html";
+		});
+	</script>
+</body>
+</html>

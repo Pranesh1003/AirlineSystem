@@ -288,16 +288,13 @@
 	</style>
 </head>
 <body>
-	<!-- Full-screen loading page with content directly blended into the background -->
 	<main class="loading-screen container-fluid d-flex align-items-center justify-content-center">
 		<div class="loading-content d-flex flex-column align-items-center text-center">
-			<!-- Title and subtitle area (no card/container visuals) -->
 			<section class="title-zone">
 				<h1 class="project-title">Airline System</h1>
 				<p class="project-subtitle">Preparing your journey...</p>
 			</section>
 
-			<!-- Loading line and airplane animation area (centered) -->
 			<section class="loading-zone" aria-label="Loading progress section">
 				<p class="loading-label mb-1">Boarding Sequence</p>
 				<div class="progress-line" role="progressbar" aria-label="Loading progress">
@@ -310,7 +307,6 @@
 	</main>
 
 	<script>
-		// Update percentage text smoothly over 3 seconds.
 		(function () {
 			var duration = 3000;
 			var start = Date.now();
@@ -330,9 +326,8 @@
 			tick();
 		})();
 
-		// Redirect to login page after 3 seconds.
 		setTimeout(function () {
-			window.location.href = "login.html";
+			window.location.href = "pages/auth/login.html";
 		}, 3000);
 	</script>
 </body>
